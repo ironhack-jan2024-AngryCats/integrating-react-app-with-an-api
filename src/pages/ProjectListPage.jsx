@@ -14,6 +14,7 @@ function ProjectListPage() {
                 setProjects(response.data);
             })
             .catch((error) => {
+                console.log("Error getting projects from the API...");
                 console.log(error);
             });
     }
@@ -25,6 +26,7 @@ function ProjectListPage() {
 
     return (
         <div className="ProjectListPage">
+
             {projects === null
                 ? <p>Loading...</p>
                 : projects.map((projectDetails) => {

@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import ProjectListPage from './pages/ProjectListPage'
+import CreateProjectPage from './pages/CreateProjectPage'
 
 function App() {
 
@@ -17,9 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={ <HomePage /> } />
         <Route path="/projects" element={<ProjectListPage />} />
-        
+        <Route path="/projects/create" element={<CreateProjectPage />} />
       </Routes>
-      
       
     </>
   )
