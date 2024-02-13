@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import AddTask from "../components/AddTask";
 
 function ProjectDetailsPage() {
 
@@ -36,6 +37,8 @@ function ProjectDetailsPage() {
                     <p>{project.description}</p>
                 </>)
             }
+
+            <AddTask projectId={projectId} callbackToRefreshProject={getProject} />
 
             {project &&
                 project.tasks.map((task) => (

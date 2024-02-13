@@ -6,6 +6,7 @@ import ProjectListPage from './pages/ProjectListPage'
 import CreateProjectPage from './pages/CreateProjectPage'
 import ProjectDetailsPage from './pages/ProjectDetailsPage'
 import EditProjectPage from './pages/EditProjectPage'
+import AddTask from './components/AddTask'
 
 function App() {
 
@@ -24,7 +25,6 @@ function App() {
         <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
         <Route path="/projects/edit/:projectId" element={ <EditProjectPage /> } />
       </Routes>
-      
     </>
   )
 }
