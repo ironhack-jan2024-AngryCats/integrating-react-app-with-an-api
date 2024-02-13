@@ -14,6 +14,7 @@ function EditProjectPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        // get project details from the API (so that we can pre-populate the form)
         axios.get(`${API_URL}/projects/${projectId}`)
             .then((response) => {
                 setTitle(response.data.title);
@@ -44,6 +45,16 @@ function EditProjectPage() {
             });
     }
 
+    const deleteProject = () => {
+        axios.delete(`${API_URL}/projects/${projectId}`)
+            .then((response) => {
+                navigate("/projects");
+            })
+            .catch((error) => {
+                console.log("Error updating project...");
+                console.log(error);
+            });
+    }
 
     return (
         <div className="EditProjectPage">
@@ -67,6 +78,8 @@ function EditProjectPage() {
 
                 <button type="submit">Update Project</button>
             </form>
+
+            <button onClick={deleteProject}>Delete Project</button>
         </div>
     );
 }
